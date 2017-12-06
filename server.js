@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 
-mongoose.connect("mongodb://localhost/mongoose-webscraper" || "mongodb://heroku_d0qvc6kc7kdvpb2be2i4373ng8e7v@ds161039.mlab.com:61039/heroku_d0qvc6");
+mongoose.connect("mongodb://localhost/MongoScraper" || "mongodb://heroku_d0qvc6kc7kdvpb2be2i4373ng8e7v@ds161039.mlab.com:61039/heroku_d0qvc6");
 
 var db  = mongoose.connection;
 
