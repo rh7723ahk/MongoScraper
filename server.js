@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 
-mongoose.connect("mongodb://localhost/MongoScraper" || "mongodb://heroku_d0qvc6kc7kdvpb2be2i4373ng8e7v@ds161039.mlab.com:61039/heroku_d0qvc6");
+mongoose.connect("mongodb://localhost/MongoScraper" || "mongodb://heroku_qwhhbtgb:p6033eh0pi3umjkff6gh1tflg0@ds153710.mlab.com:53710/heroku_qwhhbtgb");
 
 var db  = mongoose.connection;
 
@@ -38,7 +38,7 @@ app.get('/scrape', function(req, res){
 				result.link = $(this).children('a').attr('href');
 				//some CNN links already have http to an outside site otherwise they are CNN links.
 				if(result.link.indexOf("http")<0){
-					result.link = 'http://www.cnn.com' + result.link;
+					result.link = 'http://www.cnn.com/' + result.link;
 				}
 				var entry = new Article (result);
 				entry.save(function(err, doc){
